@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include("../partials/headerAdmi.ejs") %>
+            <main>
+                
+                <section class="formulario-editar">
+                    
+                    <form class="form-edit" action="/userEdit/<%= userId %>/storage?_method=PUT" method="POST"
+                        enctype="multipart/form-data">
+                        <h1 class="formulario3">Editar usuario</h1>
+                        <div class="form-contenedor">
+                            <label for="firstName" class="colocar_nombre">Primer nombre
+                            </label>
+                            <input type="text" name="firstName" id="firstName" required="obligatorio"
+                                value="<%= user.first_name %>" placeholder="">
+                        </div>
+                        <div class="form-contenedor">
+                            <label for="lastName" class="colocar_nombre">Apellido
+                            </label>
+                            <input type="text" name="lastName" id="lastName" required="obligatorio"
+                                value="<%= user.last_name ? user.last_name : '' %>">
+                        </div>
+                        <div class="form-contenedor">
+                            <label for="email" class="colocar_nombre">Email
+                            </label>
+                            <input type="email" name="email" id="email" required="obligatorio"
+                                value="<%= user.email ? user.email : '' %>">
+                        </div>
+                        <div class="form-contenedor">
+                            <label for="user" class="colocar_nombre">Usuario
+                            </label>
+                            <input type="text" name="user" id="user" required="obligatorio"
+                                value="<%= user.user ? user.user : '' %>">
+                        </div>
+                        <div class="form-contenedor">
+                            <label>Imagen actual</label>
+                            <img src="/img/<%= user.img %>" alt="foto" width="20%"><br>
+                        </div>
+                        <div class="form-contenedor">
+                            <label for="img">Nueva Imagen de Usuario</label>
+                            <input type="file" id="img" accept="jpg" name="img">
+                        </div>
+
+                        
+                        <div class="form-contenedor">
+                            <label for="category">Es administrador?</label>
+                            <select name="category" id="category">
+                                <option value="1" <%=user.user_category_id=="1" ? 'selected' : '' ; %>>Usuario</option>
+                                <option value="2" <%=user.user_category_id=="2" ? 'selected' : '' ; %>>Administrador
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-contenedor">
+                            <label for="newPrice">Numero de telefono</label>
+                            <input type="number" id="phoneNumber" name="phoneNumber" value="<%= user.phone_number %>">
+                        
+                        </div>
+                        <div class="form-edit-btn">
+                        <button type="submit" name="enviarformulario" id="enviar1">
+                            Actualizar
+                        </button>
+                    </div>
+
+                    </form>
+                    </div>
+                    </div>
+
+            </main>
+
+    </body>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+            <form class="contenedor-loginadmi" action="/administrador" method="POST">
+                <!-- Links de los formularios -->
+
+                <!-- Contenido de los Formularios -->
+                <div class="contenido-2">
+                    <!-- Iniciar Sesion -->
+                    <div id="iniciar-sesion">
+                        <h1>Iniciar Sesión</h1>
+                        <form action="#" method="post">
+                            <div class="contenedor-input">
+                                <label for="userAdmin">
+                                    Usuario <span class="req">*</span>
+                                </label>
+                                <input type="text" name="userAdmin" id="userAdmin"
+                                    class="form-control <%= locals.errors && errors.user ? 'is-invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.user : null %>">
+                                <% if (locals.errors && errors.user) { %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.user.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <div class="contenedor-input">
+                                <label for="adminPassword">
+                                    Contraseña <span class="req">*</span>
+                                </label>
+                                <input type="password" name="adminPassword" id="adminPassword"
+                                    class="form-control <%= locals.errors && errors.adminPassword ? 'is-invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.adminPassword : null %>">
+                                <% if (locals.errors && errors.adminPassword) { %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.adminPassword.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <p class="forgot"><a href="#">Se te olvidó la contraseña?</a></p>
+                            <input type="submit" class="button button-block" value="Iniciar Sesión"
+                                onClick="redirect()">
+                        </form>
+                    </div>
+                </div>
+            </form>
+
+            <%- include("../partials/footer.ejs")%>
+
+
+                <!-- <script type="text/javascript">
+                    function redirect() {
+
+                        window.location.href = "/adminList";
+                    }
+                </script> -->
+    </body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include("../partials/headproduct.ejs") %>
+
+    <body>
+        <%- include("../partials/headerAdmi.ejs") %>
+            <main>
+                <section class="formulario-editar">
+
+
+                    <form id='form-edit' class="form-edit" action="/edit/<%= idProduct %>/storage?_method=PUT"
+                        method="POST" enctype="multipart/form-data">
+                        <h1 class="formulario3">Editar destino</h1>
+                        <div class="form-contenedor">
+                            <label for="name" class="colocar_nombre">Nombre Destino
+                            </label>
+                            <input type="text" name="newName" id="newName" placeholder=""
+                                class="form-control <%= locals.errors && errors.newName ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.newName : product.name %>">
+                            <% if (locals.errors && errors.newName) { %>
+                                <div class="text-danger">
+                                    <p>
+                                        <%= errors.newName.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                        </div>
+
+
+                        <div class="form-contenedor">
+                            <label for="newDate">Nueva Fecha de Salida</label>
+                            <input type="date" id="newDate" name="newDate"
+                                value="<%= product.date ? product.date: "" ;%> ">
+
+                        </div>
+
+                        <div class="form-contenedor">
+                            <label>Imagen actual</label>
+                            <img src="/img/<%= product.img %>" alt="foto" width="20%">
+                        <br>
+                        </div>
+                        <div class="form-contenedor">
+                            <label for="newImg">Nueva Imagen producto</label>
+                            <input type="file" id="newImg" name="img" value="/img/<%=product.img %>"
+                                class="form-control <%= locals.errors && errors.img ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.img : null %>">
+                            <% if (locals.errors && errors.img) { %>
+                                <div class="text-danger">
+                                    <p>
+                                        <%= errors.img.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                        </div>
+
+
+                        <div class="form-contenedor">
+                            <label for="category">Categoria</label>
+                            <select name="category" id="category">
+                                <option value="1" <%=product.destiny_category_id=="1" ? 'selected' : '' ; %>>Nacional
+                                </option>
+                                <option value="2" <%=product.destiny_category_id=="2" ? 'selected' : '' ;%>
+                                    >Internacional</option>
+                            </select>
+                        </div>
+
+                        <div class="form-contenedor">
+                            <label for="status">Tipo de anuncio</label>
+                            <select name="status" id="status">
+                                <option value="1" <%=product.status_id=="1" ? 'selected' : '' ; %>>Destacado</option>
+                                <option value="2" <%=product.status_id=="2" ? 'selected' : '' ; %>>Oferta</option>
+                                <option value="3" <%=product.status_id=="3" ? 'selected' : '' ; %>>Simple</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-contenedor">
+                            <label for="group">Salida</label>
+                            <select name="group" id="group">
+                                <option value="1" <%=product.group_id=="1" ? 'selected' : '' ; %>>Individual</option>
+                                <option value="2" <%=product.group_id=="2" ? 'selected' : '' ; %>>Grupal</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-contenedor">
+                            <label for="meals">Regimen Comidas</label>
+                            <select id="meals" name="meals">
+                                <option value="1" <%=product.meals_id=="1" ? 'selected' : '' ; %>>All inclusive</option>
+                                <option value="2" <%=product.meals_id=="2" ? 'selected' : '' ; %>>Media Pensión</option>
+                                <option value="3" <%=product.meals_id=="3" ? 'selected' : '' ; %>>Pensión Completa
+                                </option>
+                                <option value="4" <%=product.meals_id=="4" ? 'selected' : '' ; %>> No incluye Comida
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-contenedor">
+                            <label for="transport">Traslado</label>
+                            <select name="transport" id="transport">
+                                <option value="1" <%=product.transport_id=="1" ? 'selected' : '' ; %>>Avión</option>
+                                <option value="2" <%=product.transport_id=="2" ? 'selected' : '' ; %>>Bus</option>
+                                <option value="3" <%=product.transport_id=="3" ? 'selected' : '' ; %>>Barco</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-contenedor">
+                            <label for="newDetail" class="colocarmensaje">Descripción
+                                <span class="obligatorio">*</span>
+                            </label>
+                            <input type="text" id="newDetail" name="newDetail"
+                                class="<%= locals.errors && errors.newDetail ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.newDetail: product.detail %>"
+                                 <% if (locals.errors
+                                && errors.newDetail) { %>
+                            <div class="text-danger">
+                                <p>
+                                    <%= errors.newDetail.msg %>
+                                </p>
+                            </div>
+                            <% } %>
+                                </p>
+                        </div>
+
+                        <div class="form-contenedor">
+                            <label for="newPrice">Precio</label>
+                            <input type="text" id="newPrice" name="newPrice" value="<%= product.price %>"
+                                placeholder="$60.000">
+                        </div>
+
+                        <div class="form-edit-btn">
+                            <button type="submit" name="enviarformulario" id="enviar2">
+                                Actualizar destino
+                            </button>
+                        </div>
+
+                        <div class="errores">
+                            <ul></ul>
+                        </div>
+                    </form>
+                    </div>
+                    </div>
+
+            </main>
+            <script src="/js/productEdit.js"> </script> 
+    </body>
+
+</html>

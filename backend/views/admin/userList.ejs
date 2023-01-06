@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include("../partials/headerAdmi.ejs") %>
+            <main>
+
+                <h2 class=list>USUARIOS</h2>
+                <div class="contenedor">
+                    <% users.forEach(user=> {%>
+                        <div class="card">
+                            <div class="card-contenedor-img">
+                                <img src="/img/<%=user.img%>" alt="Avatar">
+                            </div>
+                            <div class="container">
+                                <div class="card-contendor-titulo">
+                                    <h2 class="lugar">
+                                        <%= user.user==undefined ? user.email : user.user %>
+                                    </h2>
+                                    <p class="lugar">
+                                        <%= user.category==undefined ? user.email : user.user_category_id %>
+                                        <% console.log(user.category) %> 
+                                    </p>
+                                </div>
+                                <div class="buttonIn">
+                                    <form class="buttonIn--logout"  method="post" action='/userDelete/<%= user.id%>?_method=delete'>
+                                        <button id="clear3" type="submit">Eliminar</button>
+                                    </form>
+                                    <a href="/userEdit/<%= user.id %>"><button id="edit3">Editar</button></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+            </main>
+            <script> hamburger = document.querySelector(".hamburger");
+                hamburger.addEventListener("click", function () {
+                    document.querySelector("body").classList.toggle("active");
+                })</script>
+            <script type="text/javascript">
+                function redirect() {
+
+                    window.location.href = "/edit/"
+                }
+            </script>
+    </body>
+
+</html>

@@ -1,0 +1,68 @@
+<header class="header">
+    <img class="header-logo" src="/img/logoViajeros.png" alt="">
+    
+    <div class="header-rigth">
+        <h1 class="header-titulo">Viajeros</h1>
+        <p class="header-parrafo">Somos una empresa que opera en el mercado turístico hace más de 10 años.
+            Nos especializamos en SALIDAS GRUPALES ACOMPAÑADAS tanto a destinos nacionales como internacionales,
+            con SERVICIO TODO INCLUIDO</p>
+    </div>
+        <nav class="header-nav display">
+            <ul>
+                <li>
+                    <a href="/">Inicio</a>
+                </li>
+                <li>
+                    <a href="/contact">Contacto</a>
+                </li>
+                <li class="header-nav-cart">
+                    <a href="/cart">Carrito</a>
+                </li>
+                <li >
+                    <a href="/nosotros">Nosotros</a>
+                </li>
+                <li>
+                    <a href="/product/products">Destinos</a>
+                </li>
+                <% if (!locals.isLogged) { %>
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
+                    <li>
+                        <a href="/register">Registrarse</a>
+                    </li>
+                    
+                <% } else if(locals.usuariologueado.user_category_id === 2) { %>
+                    <% console.log(locals.usuariologueado.user) %> 
+                    <li class="header-navbar-imguser">
+                        <img class="partial-header-img" src= "../../img/<%= locals.usuariologueado.img %>" alt="">
+                        <a href="/perfil">
+                            <%= locals.usuariologueado.user %>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/adminList">Administrador</a>
+                    </li>
+                    <li>
+                        <a href="/logout">Cerrar sesion</a>
+                    </li>
+                        
+                <% } else { %>
+                    <li class="header-navbar-imguser">
+                        <img class="partial-header-img" src= "../../img/<%= locals.usuariologueado.img %>" alt="">
+                        <a class="partial-header-a" href="/perfil">
+                            <%= locals.usuariologueado.user %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/logout">Cerrar sesion</a>
+                    </li>
+                    
+                <% }  %>    
+            </ul>
+        </nav>
+    <div class="header-contenedor-bars">
+        <i class="fas fa-bars header-bars"></i>
+    </div>
+
+</header>

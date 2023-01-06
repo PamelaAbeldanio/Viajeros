@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include("../partials/headerAdmi.ejs") %>
+
+            <main class="maincontact3">
+                <div class="contact_form3">
+
+                    <div class="formulario3">
+                        <h1 class="formulario3">Agregar Destino</h1>
+
+                        <div class="errores">
+                            <ul>
+                                
+                            </ul>
+                        </div>
+
+                        <form id="form" action="/create" method="post" enctype="multipart/form-data">
+                        
+                            <div class="form-contenedor">
+                                <label for="name" class="colocar_nombre">Nombre Destino
+                                </label>
+                                <input type="text" name="name" id="nombre1" placeholder=""
+                                    class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.name : null %>">
+                                <% if (locals.errors && errors.name) { %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.name.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>    
+                        
+                            <div class="form-contenedor">        
+                                <label for="date">Fecha de Salida</label>
+                                <input type="date" id="date" name="date">
+                            </div> 
+                                
+                            <div class="form-contenedor">
+                                
+                                <label for="img">Imagen producto</label>
+                                <input type="file" id="img" name="img"
+                                    class="form-control <%= locals.errors && errors.img ? 'is-invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.img : null %>">
+                                <% if (locals.errors && errors.img) { %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.img.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div> 
+
+                            <div class="form-contenedor">
+                                    
+                                <label for="category">Categoria</label>
+                                <select name="category" id="category">
+                                    <option value="1">Nacional</option>
+                                    <option value="2">Internacional</option>
+                                </select>
+                            </div> 
+                            
+                                
+                            <div class="form-contenedor">
+                                
+                                <label for="status">Tipo de anuncio</label>
+                                <select name="status" id="status">
+                                    <option value="1">Destacado</option>
+                                    <option value="2">Oferta</option>
+                                    <option value="3">Simple</option>
+                                </select>
+                            </div> 
+                            
+                                
+                            <div class="form-contenedor">
+                                
+                                <label for="group">Grupo</label>
+                                <select name="group" id="group">
+                                    <option value="1">Grupal</option>
+                                    <option value="2">Individual</option>
+                                </select>
+                            </div> 
+                            
+                            <div class="form-contenedor">    
+                        
+                                <label for="meals">Regimen Comidas</label>
+                                <select name="meals" id="meals">
+                                    <option value="1">All inclusive</option>
+                                    <option value="2">Media Pensión</option>
+                                    <option value="3">Pensión Completa</option>
+                                    <option value="4">No incluye comidas</option>
+
+                                </select>
+                            </div> 
+                            
+                            <div class="form-contenedor">
+                                
+                                <label for="transport">Traslado</label>
+                                <select name="transport" id="transport">
+                                    <option value="1">Avión</option>
+                                    <option value="2">Bus</option>
+                                    <option value="3">Barco</option>
+                                </select>
+                            </div> 
+                            
+                                
+                            <div class="form-contenedor">
+                                
+                                <label for="detail" class=" colocarmensaje">Descripción
+                                    <span class="obligatorio">*</span>
+                                </label>
+                                <input 
+                                    type="text"
+                                    name="detail" 
+                                    id="detail"
+                                    class=" textomensaje form-control <%= locals.errors && errors.detail ? 'is-invalid' : null %>">
+                                </input>
+                                <% if (locals.errors && errors.detail) { %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.detail.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div> 
+                            
+                                    
+                            <div class="form-contenedor">
+                                    
+                                <label for="price">Precio</label>
+                                <input type="text" id="price" name="price" placeholder="$">
+                            
+                            </div> 
+                        <div class="form-edit-btn">
+                            <button type="submit" name="enviarformulario" id="enviar1">
+                                Subir
+                            </button>
+
+
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <script> hamburger = document.querySelector(".hamburger");
+                hamburger.addEventListener("click", function () {
+                    document.querySelector("body").classList.toggle("active");
+                })</script>
+            <script src="/js/productCreate.js"> </script>
+    </body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+
+
+            <main class="main-register">
+                <div class="main-register-contenedor">
+
+                    <h1 class="main-register-title">Registre su cuenta</h1>
+                    <div class="errores">
+                        <ul>
+                            
+                        </ul>
+                    </div>
+                    <section class="main-register-section">
+                        <form id="form" class="register-panel" action="/register" method="POST" enctype="multipart/form-data">
+                            <label class="register-label" for="nombre">Nombre</label>
+                            <input id="nombre" type="text" name="nombre" placeholder="Nombre completo"
+                                class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.nombre : null %>">
+                            <% if (locals.errors && errors.nombre) { %>
+                                <div class="text-danger">
+                                    <p>
+                                        <%= errors.nombre.msg %>
+                                    </p>
+                                </div>
+                                
+                                <% } %>
+
+                                    <label class="register-label" for="apellido">Apellido</label>
+                                    <input id="apellido" type="text" name="apellido" placeholder="Apellido"
+                                        class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
+                                        value="<%= locals.oldData ? oldData.apellido : null %>">
+                                    <% if (locals.errors && errors.apellido) { %>
+                                        <div class="text-danger">
+                                            <p>
+                                                <%= errors.apellido.msg %>
+                                            </p>
+                                        </div>
+                                        <% } %>
+                                            <label class="register-label" for="user">Nombre de Usuario</label>
+                                            <input type="text" name="user" placeholder="Nombre de Usuario"
+                                                class="form-control <%= locals.errors && errors.user ? 'is-invalid' : null %>"
+                                                value="<%= locals.oldData ? oldData.user : null %>">
+                                            <% if (locals.errors && errors.user) { %>
+                                                <div class="text-danger">
+                                                    <p>
+                                                        <%= errors.user.msg %>
+                                                    </p>
+                                                </div>
+                                                <% } %>
+
+                                                <p>
+                                                    <label class="register-label" for="img">Seleccione una imagen de perfil</label>
+                                                    <input type="file" id="img" name="img"
+                                                    class="form-control <%= locals.errors && errors.img ? 'is-invalid' : null %>"
+                                                    value="<%= locals.oldData ? oldData.user : null %>">
+                                                    <% if (locals.errors && errors.img) { %>
+                                                        <div class="text-danger">
+                                                            <p>
+                                                                <%= errors.img.msg %>
+                                                            </p>
+                                                        </div>
+                                                        <% } %>
+                                                </p>
+
+
+
+
+                                                    <label class="register-label" for="fecha-nacimiento">Fecha de
+                                                        nacimiento</label>
+                                                    <input type="date" name="fechaNacimiento"
+                                                        class="form-control <%= locals.errors && errors.fechaNacimiento ? 'is-invalid' : null %>"
+                                                        value="<%= locals.oldData ? oldData.fechaNacimiento : null %>">
+                                                    <% if (locals.errors && errors.fechaNacimiento) { %>
+                                                        <div class="text-danger">
+                                                            <p>
+                                                                <%= errors.fechaNacimiento.msg %>
+                                                            </p>
+                                                        </div>
+                                                        <% } %>
+
+                                                            <label class="register-label" for="email">Email</label>
+                                                            <input id="email" type="email" name="email" placeholder="Email"
+                                                                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                                                                value="<%= locals.oldData ? oldData.email : null %>">
+                                                            <% if (locals.errors && errors.email) { %>
+                                                                <div class="text-danger">
+                                                                    <p>
+                                                                        <%= errors.email.msg %>
+                                                                    </p>
+                                                                </div>
+                                                                <% } %>
+
+                                                                
+                                                                    <label class="register-label"
+                                                                        for="password">Contraseña</label>
+                                                                    <input id="password" type="password" name="password"
+                                                                        placeholder="Contraseña"
+                                                                        class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>">
+                                                                    <% if (locals.errors && errors.password) { %>
+                                                                        <div class="text-danger">
+                                                                            <p>
+                                                                                <%= errors.password.msg %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <% } %>
+
+                                                                            <label class="register-label"
+                                                                                for="tel">Telefono de
+                                                                                contacto</label>
+                                                                            <input type="number" name="tel"
+                                                                                placeholder="Telefono"
+                                                                                class="form-control <%= locals.errors && errors.tel ? 'is-invalid' : null %>"
+                                                                                value="<%= locals.oldData ? oldData.tel : null %>">
+                                                                            <% if (locals.errors && errors.tel) { %>
+                                                                                <div class="text-danger">
+                                                                                    <p>
+                                                                                        <%= errors.tel.msg %>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <% } %>
+                                                                               <button id="btn">Crear cuenta</button>
+                        </form>
+
+                    </section>
+                </div>
+
+
+            </main>
+
+
+
+            <%- include("../partials/footer.ejs")%>
+
+            <script src="/js/register.js"> </script>
+            <script src="/js/hamburguesa.js"></script>
+    </body>
+
+</html>

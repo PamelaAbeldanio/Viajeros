@@ -1,0 +1,58 @@
+[
+ {
+  "id": 1,
+  "name": "Cataratas del Iguazu",
+  "date": "",
+  "price": "$40000",
+  "category": "Nacional",
+  "img": "img-1665779946469.jpg",
+  "status": "destacado",
+  "detail": "Al norte de Argentina, el río Iguazú se precipita al Paraná formando las cataratas más famosas del mundo.",
+  "extras": "Universo natural único, lleno de vida",
+  "group": "grupo",
+  "meals": "all",
+  "transport": "bus"
+ },
+ {
+  "id": 2,
+  "name": "Puerto Vallarta",
+  "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla magnam vel unde quia consectetur id delectus error aut ullam, libero, obcaecati adipisci accusantium iste veritatis et cupiditate rem ab minus",
+  "price": 100,
+  "category": "Internacional",
+  "img": "El Bolsón.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Bolson ",
+  "detail": "buen viaje",
+  "price": 100,
+  "category": "Internacional",
+  "img": "El Bolsón.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Purmamarca",
+  "date": "",
+  "price": "$40000",
+  "category": "Nacional",
+  "img": "img-1665779996459.jpg",
+  "status": "destacado",
+  "detail": "Se ubica en la base de un espectacular cerro multicolor llamado Cerro de los Siete Colores.",
+  "extras": "Partida hacia las Salinas Grandes y parte de quebrada de Humahuaca",
+  "group": "grupo",
+  "meals": "all",
+  "transport": "bus"
+ },
+ {
+  "id": 5,
+  "name": "Glaciar Perito Moreno",
+  "date": "",
+  "detail": "El Perito Moreno es uno de los tantos glaciares que forman el Parque Nacional Los Glaciares. Todos forman el Hielo Continental Patagónico (17.000 kilómetros de extensión) que es una de las reservas de agua potable más importante del mundo. Es que el 90 % del agua dulce del planeta se encuentra en las zonas glaciarias y después de la Antártida y Groenlandia, sigue esta región argentina.",
+  "price": "$40000",
+  "category": "Nacional",
+  "img": "img-1665778630187.webp",
+  "status": ["destacado","destacado"],
+  "extras": "Se puede llegar hasta el Glaciar en paseos por tierra o alternando etapas de navegación en el recorrido.",
+  "transport": "bus"
+ }
+]

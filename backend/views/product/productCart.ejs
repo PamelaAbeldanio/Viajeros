@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include("../partials/head.ejs") %> 
+
+<body>
+    <%- include("../partials/header.ejs") %> 
+
+
+    <!-- carrito -->
+
+    <main class="carrito" id="product-cart">
+        <h1 class="carrito-titulo">¡Ya casi terminas con tu compra!</h1>
+        <div class="carrito-contenedor">
+            <h2 class="carrito-subtitulo">Chequea tus productos</h2>
+            <i class="fas fa-cart-arrow-down carrito-icono"></i>
+        </div>
+        <section class="carrito-section">
+            <h2 class="carrito-titulo-seleccionados">Destinos seleccionados</h2>
+
+            <div class="carrito-contenedor-seleccionados">
+                <p class="carrito-titulo-destino">Nombre del destino</p>
+                <p class="carrito-precio">$$$$</p>
+            </div>
+
+            <h2 class="carrito-titulo-extras">Extras agregados</h2>
+            <div class="carrito-contenedor-extras">
+                <p class="carrito-subtitulo-extras">paquete extra 1</p>
+                <p class="carrito-precio">$$$$</p>
+            </div>
+
+            <h2 class="carrito-titulo-total">Total a pagar</h2>
+            <div class="carrito-contenedor-total">
+                <p class="carrito-subtitulo-total">TOTAL</p>
+                <p class="carrito-precio">$$$$$</p>
+            </div>
+            
+            <div class="carrito-contenedor-btn">
+                <button type="submit" class="carrito-boton-pagar">Pagar</button>
+            </div>
+           
+    
+        </section>
+        <div class="carrito-contenedor-botones">
+            <button type="submit" class="carrito-boton-seguir-comprando">Agregar otro destino</button>
+            <button type="reset" class="carrito-boton-cancelar">Cancelar compra</button>
+        </div>
+    </main>
+
+   
+
+
+    <!-- footer -->
+   
+    </section>
+    <%- include("../partials/footer.ejs")%> 
+    <script src="/js/hamburguesa.js"></script>
+</body>
+</html>

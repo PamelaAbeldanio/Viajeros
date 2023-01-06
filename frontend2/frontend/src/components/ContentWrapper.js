@@ -1,0 +1,26 @@
+import React from 'react';
+import TopBar from './TopBar';
+import ContentRowTop from './ContentRowTop';
+import Footer from './Footer';
+
+function ContentWrapper(props) {
+    return (
+        <React.Fragment>
+            {/*<!-- Content Wrapper -->*/}
+            <div id="content-wrapper" className="d-flex flex-column">
+                {/*<!-- Main Content -->*/}
+                <div id="content">
+                    <TopBar />
+                    <ContentRowTop
+                        destinys={props.destinys}
+                        categorys={props.categorys}
+                        total={props.total}
+
+                    />
+                    <Footer />
+                </div>
+            </div>
+        </React.Fragment>
+    )
+}
+export default ContentWrapper;

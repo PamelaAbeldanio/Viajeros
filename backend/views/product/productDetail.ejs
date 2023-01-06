@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/headproduct.ejs") %>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+        <script src="js//carrusel.js."></script>
+        
+
+            <section class="buscador">
+                <div class="contenedor-buscador">
+                    <%- include('../partials/search.ejs') %>
+                    
+                </div>
+                <div class="header-contenedor-bars">
+                    <i class="fas fa-bars header-bars"></i>
+                </div>
+            </section>
+            <main class="main-product">
+                <section class="main-product-section">
+
+                    <article class="destiny">
+
+                        <div class="main-product-contenedor">
+                            <div class="destiny-card-top">
+                                <h1 class="destiny-title">
+                                    <%= destino.name %>
+                                </h1>
+                                <img class="imgproduct" src="/img/<%= destino.img %>" alt="">
+                            </div>
+
+                            <div class="product-card-body">
+                                <div class="efectivo">
+                                    <h2 class="price"> $<%= destino.price %>
+                                    </h2>
+                                    <p class="price-cuotas"> en 12x $ <%= (destino.price/12).toFixed(2) %>
+                                    </p>
+                                    <a href="">
+                                        <p>ver los medios de pago</p>
+                                    </a>
+                                </div>
+                                <div class="contenedor-select">
+                                    <label for="">Cantidad:</label>
+                                    <select name="select">
+                                        <option value="value1" selected>1</option>
+                                        <option value="value2">2</option>
+                                        <option value="value3">3</option>
+                                    </select>
+                                </div>
+                                <div class="contenedor-btn">
+                                    <button class="article-btn btn-comprar" onClick="redirect()">Comprar
+                                        Ahora</button>
+                                    <button class="article-btn btn-agregar" onClick="redirect()">Agregar al
+                                        carrito</button>
+                                </div>
+                                <h2 class="detail">Lo que tenes que saber:</h2>
+                                <ul class="producto-info">
+                                    <li>
+                                        <i class="fas fa-bus"></i>
+                                        <p>Transporte: <%= destino.transports.transport %>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-calendar"></i>
+                                        <p>Salida en Grupo o invidual: <%= destino.salidas.group %>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-utensils"></i>
+                                        <p>Régimen de Comidas: <%= destino.meals.meals %>.</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-calendar-check"></i>
+                                        <p>Tipo anuncio: <%= destino.anuncios.status %>.</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-globe"></i>
+                                        <p>Destino: <%= destino.categorys.categoria %>.</p>
+                                    </li>
+
+
+                                </ul>
+                                <p class="destiny-description">
+                                    en <%= destino.date %> .
+                                </p>
+
+                                <div class="p">
+                                    <div class="producto-descripcion">
+                                        <h2>Descripcion:</h2>
+                                        <p class="producto-descrip">
+                                            <%= destino.detail %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </article>
+                </section>
+
+            </main>
+           
+           <!-- <div id="carrito-buscados">
+                <div class="carrito-destinos">
+                    <h2 class="carrito-h2">Destinos más buscados</h2>
+                    <p class="img-carrito"><img class="carrito-img" src="/img/otrosdestinos1.jpg" alt=""></p>
+                    <p class="img-carrito2"><img class="carrito-img" src="/img/otrosdestinos2.jpg" alt=""></p>
+                    <p class="img-carrito3"><img class="carrito-img" src="/img/otrosdestinos3.jpg" alt=""></p>
+                    <p class="img-carrito2"><img class="carrito-img" src="/img/otrosdestinos2.jpg" alt=""></p>
+                    </p>
+                    
+                </div>
+            </div>-->
+
+
+            </section>
+            <%- include("../partials/footer.ejs")%>
+
+                <script type="text/javascript">
+                    function redirect() {
+
+                        window.location.href = "/cart";
+                    }
+                </script>
+                <script src="/js/hamburguesa.js"></script>
+    </body>
+
+</html>

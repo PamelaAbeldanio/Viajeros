@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+
+        <section class="buscador">
+            <%- include('../partials/search.ejs') %>
+                <div class="header-contenedor-bars">
+                    <i class="fas fa-bars header-bars"></i>
+                </div>
+        </section>
+                <main class="main-home">
+                    <h2 class="Category">Resultado de "<%= search %>" </h2>
+                    <% if (destinos.length < 1){ %>
+                        <p> 
+                            <%=  mensaje  %> 
+                        </p>
+                    <% } %> 
+                    
+
+                    <section class="main-home-section">
+
+                        
+                            <% destinos.forEach( product=> { %>
+                                <article class="article">
+                                    <div class="article-card-top">
+                                        <img class="article-img" src="/img/<%= product.img %>" alt="">
+                                    </div>
+                                    <div class="article-card-body">
+                                        <h1 class="article-titulo">
+                                            <%= product.name %>
+                                        </h1>
+                                        <p class="article-parrafo cut-text">
+                                            <%= product.detail %>
+                                        </p>
+                                        <p class="article-precio">
+                                            $<%=product.price %>
+                                        </p>
+                                        <div class="contenedor-btn">
+                                            <a href="/product/detalle/<%=product.id %> "> <button
+                                                    class="article-btn">Comprar</button> </a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <% }) %>
+                    </section>
+
+
+                </main>
+                <%- include("../partials/footer.ejs")%>
+                <script src="/js/hamburguesa.js"></script>
+    </body>
+
+</html>

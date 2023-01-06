@@ -1,0 +1,58 @@
+[
+ {
+  "id": 1,
+  "firstName": "Jaquenette",
+  "lastName": "Viollet",
+  "email": "jviollet0@time.com",
+  "user": "jviollet0",
+  "password": "$2a$10$ClHoDIH6yB8Zf8tVrxabruyVY17QZ2A34O/VH41RxiBNCYKpq8ozW",
+  "category": "Usuario",
+  "img": "img-1667588719704.jpg",
+  "phoneNumber": ""
+ },
+ {
+  "id": 2,
+  "firstName": "Pamela Daiana ",
+  "lastName": "Abeldaño",
+  "email": "pbeldanio@gmail.com",
+  "user": "PameAbeldaño",
+  "password": "$2a$10$JoEZGQZSu6QBNmNNYPGo4uArOgogDAT.xnKdLVE3rSvuto3PFD7I6",
+  "category": "admin",
+  "img": "img-1666048387016.png",
+  "phoneNumber": "1166406539"
+ },
+ {
+  "id": 3,
+  "firstName": "Manuel",
+  "lastName": "Chavez",
+  "email": "test@mail.com",
+  "user": "ManuChavez",
+  "password": "$2a$10$pFX067Ydj0H/SZi8/.lnDeMg2gZpEqesHmOzElu.DdwXAeI.tZoFK",
+  "category": "admin",
+  "img": "img-1666048303344.jpg",
+  "phoneNumber": "1232131"
+ },
+ {
+  "id": 4,
+  "firstName": "valentina",
+  "lastName": "vallejos podio",
+  "email": "valentinavallejos2022@gmail.com",
+  "user": "valentinavp",
+  "password": "$2a$10$YxlzVTO69Q6Fi9QYbeGEWO223hJGMttXuzllwhWhtoS0F.Vw/r.lW",
+  "category": "admin",
+  "img": "img-1666048399762.jpg",
+  "phoneNumber": "3492228651"
+ },
+ {
+  "id": 5,
+  "firstName": "valentina",
+  "lastName": "Vallejos Pitton",
+  "birth": "1996-07-17",
+  "email": "valentinavallejos2022@gmail.com",
+  "user": "ValentinaPitton",
+  "password": "$2a$10$JP8MqH8DR7tPDCRguLfb7uWpo3mSTFCa5qVOdQNxK/bhJQeukPKdC",
+  "category": "user",
+  "img": "1666050058413_img.jpg",
+  "phoneNumber": "3492228651"
+ }
+]

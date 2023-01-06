@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include("../partials/headerAdmi.ejs") %>
+            <main>
+
+                <h2 class=list>NACIONAL</h2>
+                <div class="contenedor">
+                    <% let nationalProducts = destinos.filter(product => product.destiny_category_id == '1')%>
+                    <% nationalProducts.forEach(product=> {%>
+                        <div class="card">
+                            <div class="card-contenedor-img">
+                                <img src="/img/<%= product.img %>" alt="Avatar">
+                            </div>
+                            <div class="container">
+                                <div class="card-contendor-titulo">
+                                    <h2 class="lugar">
+                                        <%= product.name %>
+                                    </h2>
+                                    
+                                </div>
+                                
+                                <div class="buttonIn">
+                                    <form class="buttonIn--logout" method="post" action='/delete/<%= product.id%>?_method=delete'>
+                                        <button id="clear3" type="submit">Eliminar</button>
+                                    </form>
+                                    <a href="/edit/<%= product.id%>"><button id="edit3">Editar </button></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+
+                            
+                </div>
+                <h2 class=list><b>INTERNACIONAL</b></h2>
+                <div class="contenedor">
+                    <% let internationalProducts = destinos.filter(product => product.destiny_category_id == '2')%>
+                        <% internationalProducts.forEach(product => {%>
+                            <div class="card">
+                                <div class="card-contenedor-img">
+                                    <img src="/img/<%= product.img %>" alt="Avatar">
+                                </div>
+                                <div class="container">
+                                    <div class="card-contendor-titulo">
+                                        <h2 class="lugar">
+                                            <%= product.name %>
+                                        </h2>
+                                    </div>
+
+                                    <div class="buttonIn">
+                                        <form class="buttonIn--logout" method="post" action='/delete/<%= product.id%>?_method=delete'>
+                                            <button id="clear3" type="submit">Eliminar</button>
+                                        </form>
+                                        <a href="/edit/<%= product.id%>"><button id="edit3">Editar</button></a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <% }) %>
+                               
+                </div>
+            </main>
+            <script> hamburger = document.querySelector(".hamburger");
+                hamburger.addEventListener("click", function () {
+                    document.querySelector("body").classList.toggle("active");
+                })</script>
+            <script type="text/javascript">
+                function redirect() {
+
+                    window.location.href = "/edit/"
+                }
+            </script>
+    </body>
+
+</html>

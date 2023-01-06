@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+
+            <section class="buscador">
+                <%- include('../partials/search.ejs') %>
+            </section>
+
+            
+            <main class="main-perfil">
+                <div class="main-perfil-contenedor">
+                    
+                    <img class='main-perfil-img' src="/img/<%= user.img %>" alt="avatar">
+                        <h1 class="main-perfil-title">Hola <%= user.user %>!</h1>
+                    </div>
+                    </main>
+                    <div class="datos-usuario">
+                        <h2>
+                            <i class="fas fa-at"></i>
+                            <%= user.email %>
+                        </h2>
+                        <h2>
+                            <i class="fab fa-facebook-messenger"></i>
+                            <%= user.user %>
+                        </h2>
+                        <h2>
+                            <i class="fab fa-twitter"></i>
+                            <%= user.user %>
+                        </h2>
+                    </div>
+                    
+                       
+                    <div class="buttonIn">
+                        <form class="buttonIn--logout" action="/logout" method="GET">
+                            <button id="btn" type="submit">Cerrar Sesion</button>
+                        </form>
+                            <a href="/perfilEdit/<%= user.id %>"><button id="btn">Editar <i class="fas fa-edit"></i></button></a>
+                    </div>
+                </div>
+            
+
+            <%- include("../partials/footer.ejs")%>
+            <script src="/js/hamburguesa.js"></script>
+    </body>
+</html>
