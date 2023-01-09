@@ -7,8 +7,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        /* create_at: dataTypes.TIMESTAMP,
-        updated_at: dataTypes.TIMESTAMP, */
         status: {
             type: dataTypes.STRING(23),
             allowNull: false
@@ -18,7 +16,6 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: false,
-        /* deleteAt: false */
     };
 
     const Status = sequelize.define(alias, cols, config);

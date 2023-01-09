@@ -7,8 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        /* create_at: dataTypes.TIMESTAMP,
-        updated_at: dataTypes.TIMESTAMP, */
+       
         categoria: {
             type: dataTypes.STRING(200),
             allowNull: false
@@ -17,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: false,
-        /* deleteAt: false */
+        
     };
 
     const Destiny_category = sequelize.define(alias, cols, config);

@@ -7,8 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        /* create_at: dataTypes.TIMESTAMP,
-        updated_at: dataTypes.TIMESTAMP, */
+        
         group: {
             type: dataTypes.STRING(20),
 
@@ -16,18 +15,18 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: false,
-        /* deleteAt: false */
+        
     };
 
     const Group = sequelize.define(alias, cols, config);
 
 
-    // TERMINAR ESTA PARTE
+ 
     Group.associate = (models) => {
         Group.hasMany(models.Destiny, {
             as: 'destiny_group',
             foreignKey: 'group_id'
-        }) // hay que chequear esto
+        }) 
     }
 
     return Group

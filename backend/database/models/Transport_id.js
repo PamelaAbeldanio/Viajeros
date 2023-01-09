@@ -7,8 +7,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        /* create_at: dataTypes.TIMESTAMP,
-        updated_at: dataTypes.TIMESTAMP, */
         transport: {
             type: dataTypes.STRING(20),
             allowNull: false
@@ -17,13 +15,9 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: false,
-        /* deleteAt: false */
     };
 
     const Transport_id = sequelize.define(alias, cols, config);
-
-
-    
     Transport_id.associate = (models) => {
         Transport_id.hasMany(models.Destiny, {
             as: 'destinos',

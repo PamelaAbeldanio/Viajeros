@@ -16,10 +16,7 @@ const controller = {
             })
             .then((destino) => {
                 res.render('productDetail', {destino,idProduct }); 
-            })/* .catch(e => {
-                res.send(e);
-            })      */
-        
+            })
     },
     products:  (req, res) =>{
         

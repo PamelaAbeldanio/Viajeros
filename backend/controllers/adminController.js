@@ -70,7 +70,6 @@ const controller = {
     saveEdit: (req, res) => {
         let destinyId = req.params.id
 
-        /* ---------------------VALIDACION PENDIENTE BACKEND-------------------- */
        const resultValidation = validationResult(req);
         db.Destiny.findOne({
         where: {

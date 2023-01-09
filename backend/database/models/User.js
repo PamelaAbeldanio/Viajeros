@@ -29,11 +29,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         user_category_id: {
             type: dataTypes.INTEGER(10),
-            /* allowNull: false */
         },
         img: {
             type: dataTypes.TEXT,
-            /* allowNull: false */
         },
         phone_number: {
             type: dataTypes.INTEGER(50),
@@ -43,12 +41,10 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: false,
-        /* deleteAt: false */
     }
 
     const User = sequelize.define(alias, cols, config);
 
-    // TERMINAR ESTA PARTE
     User.associate = (models) => {
         User.belongsToMany(models.Destiny, {
             as: 'destiny',

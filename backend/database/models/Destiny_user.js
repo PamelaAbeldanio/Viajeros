@@ -7,8 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        /* create_at: dataTypes.TIMESTAMP,
-        updated_at: dataTypes.TIMESTAMP, */
+      
         user_id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
@@ -21,16 +20,10 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: false,
-        /* deleteAt: false */
+      
     };
 
     const Destiny_user = sequelize.define(alias, cols, config);
-
-
-    // TERMINAR ESTA PARTE
-    /* Destiny_user.associate = (models) => {
-        Destiny_user.belongsTo // hay que chequear esto
-    } */
 
     return Destiny_user
 };

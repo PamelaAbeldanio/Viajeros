@@ -32,7 +32,6 @@ const controller = {
         res.render("admin");
     },
     adminLoginCheck: (req, res) => {
-        //res.send(req.body)
 
         let adminCheck = {
             user: req.body.userAdmin,

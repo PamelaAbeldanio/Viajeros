@@ -7,8 +7,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        /* create_at: dataTypes.TIMESTAMP,
-        updated_at: dataTypes.TIMESTAMP, */
         category: {
             type: dataTypes.STRING(20),
             allowNull: false
@@ -17,13 +15,9 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: false,
-        /* deleteAt: false */
     };
 
     const User_category = sequelize.define(alias, cols, config);
-
-
-    
     User_category.associate = (models) => {
         User_category.hasMany(models.User, {
             as: 'categoriaUsuario',

@@ -7,8 +7,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        /* create_at: dataTypes.TIMESTAMP,
-        updated_at: dataTypes.TIMESTAMP, */
         meals: {
             type: dataTypes.STRING(30),
             allowNull: false
@@ -17,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: false,
-        /* deleteAt: false */
+  
     };
 
     const Meals_id = sequelize.define(alias, cols, config);

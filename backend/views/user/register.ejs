@@ -13,11 +13,12 @@
                     <h1 class="main-register-title">Registre su cuenta</h1>
                     <div class="errores">
                         <ul>
-                            
+
                         </ul>
                     </div>
                     <section class="main-register-section">
-                        <form id="form" class="register-panel" action="/register" method="POST" enctype="multipart/form-data">
+                        <form id="form" class="register-panel" action="/register" method="POST"
+                            enctype="multipart/form-data">
                             <label class="register-label" for="nombre">Nombre</label>
                             <input id="nombre" type="text" name="nombre" placeholder="Nombre completo"
                                 class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
@@ -28,7 +29,7 @@
                                         <%= errors.nombre.msg %>
                                     </p>
                                 </div>
-                                
+
                                 <% } %>
 
                                     <label class="register-label" for="apellido">Apellido</label>
@@ -54,19 +55,20 @@
                                                 </div>
                                                 <% } %>
 
-                                                <p>
-                                                    <label class="register-label" for="img">Seleccione una imagen de perfil</label>
-                                                    <input type="file" id="img" name="img"
-                                                    class="form-control <%= locals.errors && errors.img ? 'is-invalid' : null %>"
-                                                    value="<%= locals.oldData ? oldData.user : null %>">
-                                                    <% if (locals.errors && errors.img) { %>
-                                                        <div class="text-danger">
-                                                            <p>
-                                                                <%= errors.img.msg %>
-                                                            </p>
-                                                        </div>
-                                                        <% } %>
-                                                </p>
+                                                    <p>
+                                                        <label class="register-label" for="img">Seleccione una imagen de
+                                                            perfil</label>
+                                                        <input type="file" id="img" name="img"
+                                                            class="form-control <%= locals.errors && errors.img ? 'is-invalid' : null %>"
+                                                            value="<%= locals.oldData ? oldData.user : null %>">
+                                                        <% if (locals.errors && errors.img) { %>
+                                                            <div class="text-danger">
+                                                                <p>
+                                                                    <%= errors.img.msg %>
+                                                                </p>
+                                                            </div>
+                                                            <% } %>
+                                                    </p>
 
 
 
@@ -85,7 +87,8 @@
                                                         <% } %>
 
                                                             <label class="register-label" for="email">Email</label>
-                                                            <input id="email" type="email" name="email" placeholder="Email"
+                                                            <input id="email" type="email" name="email"
+                                                                placeholder="Email"
                                                                 class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                                                                 value="<%= locals.oldData ? oldData.email : null %>">
                                                             <% if (locals.errors && errors.email) { %>
@@ -96,7 +99,7 @@
                                                                 </div>
                                                                 <% } %>
 
-                                                                
+
                                                                     <label class="register-label"
                                                                         for="password">Contraseña</label>
                                                                     <input id="password" type="password" name="password"
@@ -124,7 +127,8 @@
                                                                                     </p>
                                                                                 </div>
                                                                                 <% } %>
-                                                                               <button id="btn">Crear cuenta</button>
+                                                                                    <button id="btn">Crear
+                                                                                        cuenta</button>
                         </form>
 
                     </section>
@@ -137,8 +141,8 @@
 
             <%- include("../partials/footer.ejs")%>
 
-            <script src="/js/register.js"> </script>
-            <script src="/js/hamburguesa.js"></script>
+                <script src="/js/register.js"> </script>
+                <script src="/js/hamburguesa.js"></script>
     </body>
 
 </html>
