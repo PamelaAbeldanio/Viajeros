@@ -8,7 +8,6 @@ const controller = {
     
     detail:  (req, res) =>{
 
-
         let idProduct = req.params.id;
         
         db.Destiny.findByPk(idProduct, {
@@ -18,14 +17,13 @@ const controller = {
                 res.render('productDetail', {destino,idProduct }); 
             })
     },
+
     products:  (req, res) =>{
-        
 
         db.Destiny.findAll({include: [{association: 'transports'}], raw: true, nest: true}).
             then((destinos) => {
                 res.render('products', {destinos});
         })
-
     },
 
     search: (req, res) => {
@@ -52,3 +50,6 @@ const controller = {
 module.exports = controller;
 
 
+//Solo el controlador sabe atender a las peticiones, solicitar información a la base de datos si fuese necesario 
+//y definir cuál será la respuesta que tiene que dar ante una determinada petición.
+//el puente entre la Vista y el Modelo.

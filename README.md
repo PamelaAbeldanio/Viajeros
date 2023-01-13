@@ -22,30 +22,3 @@ Nuestras actividades tienen como objetivo desconectar con el estrés diario y la
 Le damos principal importancia a su salud y su dieta, en nuestros menús encontrará, comidas orgánicas, batidos o platos vegetarianos.
 Y Si desea disfrutar de ésta maravillosa experiencia en compañia podrá acceder a paquetes exclusivos, con descuentos preferenciales.
 
-<sup>Integrantes del grupo</sup>
-
-```
-
-Valentina Vallejos Podio - Manuel Chávez - Franco Ambort - Pamela Abeldaño
-
-Somos parte del Departamento de desarrollo web de la agencia, nuestras funciones:
-- Solucionar problemas del sitio web
-- Mantener y actualizar el sitio web
-- Monitorear el tráfico del sitio web
-- Hacer prototipos del sitio web
-- Presentar especificaciones de diseño
-- Trabajar con diseñadores web
-
-```
-
-<sup>Inspiración de referentes del mercado</sup>
-
-[**Turismo de Bienestar**](https://turismodebienestar.com/)-->Posee una paleta de colores que permite la legibilidad de los textos y el disfrute de cada sección. Usa tipografías apropiadas. Posee un apartado "Blog" donde el usuario puede leer experiencias, lo que hace que sea más atractivo el sitio.
-
-[**Viaje Oasis**](https://viajesoasis.com/)-->Tiene poca publicidad o al menos no es invasiva, tiene en el centro al usuario y busca que éste se lleve una buena experiencia. Genera confianza en el usuario ya que desde el inicio brinda información sobre la agencia, muestra con que empresas trabaja.
-
-[**Setil Viajes**](https://www.setilviajes.com/)-->Portafolio visual llamativo, las imágenes capturan la atención del usuario, incluye fotografías y videos en el inicio de su sitio web. El uso de logotipos u otro tipo de branding es más llamativo para el usuario.
-
-[**Pangea**](https://www.pangea.tur.ar/)-->En el encabezado están visibles los iconos de sus redes sociales y los medios de contacto. Tienen un buscador para ayudarte a encontrar el destino que deseas fácilmente, teniendo en cuenta la fecha y la cantidad de pasajeros.
-
-[**Marcelo Gimenez**](https://marcelogimenez.tur.ar/)-->En términos de experiencia del usuario, tiene un diseño súper intuitivo que permite que el usuario interactúe fácilmente.

@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<%- include("../partials/head.ejs") %>
+<%- include("../partials/headproduct.ejs") %>
 
     <body>
         <%- include("../partials/headerAdmi.ejs") %>
@@ -10,14 +10,31 @@
                 
                 <section class="formulario-editar">
                     
-                    <form class="form-edit" action="/userEdit/<%= userId %>/storage?_method=PUT" method="POST"
+                    <form id="form-edit" class="form-edit" action="/userEdit/<%= userId %>/storage?_method=PUT" method="POST"
                         enctype="multipart/form-data">
                         <h1 class="formulario3">Editar usuario</h1>
+                        <div class="errores">
+                            <ul></ul>
+                        </div>
                         <div class="form-contenedor">
                             <label for="firstName" class="colocar_nombre">Primer nombre
                             </label>
-                            <input type="text" name="firstName" id="firstName" required="obligatorio"
-                                value="<%= user.first_name %>" placeholder="">
+                            
+
+
+                                <input type="text" name="firstName" id="firstName" placeholder=""
+                                class="form-control <%= locals.errors && errors.firstName ? 'is-invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.firstName : user.first_name %>">
+                                    <% if (locals.errors && errors.firstName) { %>
+                                        <div class="text-danger">
+                                            <p>
+                                                <%= errors.firstName.msg %>
+                                            </p>
+                                        </div>
+                                        <% } %>
+
+
+
                         </div>
                         <div class="form-contenedor">
                             <label for="lastName" class="colocar_nombre">Apellido
@@ -42,8 +59,18 @@
                             <img src="/img/<%= user.img %>" alt="foto" width="20%"><br>
                         </div>
                         <div class="form-contenedor">
+                            
                             <label for="img">Nueva Imagen de Usuario</label>
-                            <input type="file" id="img" accept="jpg" name="img">
+                            <input type="file" id="img" accept="jpg" name="img" value="/img/<%=user.img %>"
+                            class="form-control <%= locals.errors && errors.img ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.img : null %>">
+                            <% if (locals.errors && errors.img) { %>
+                                <div class="text-danger">
+                                    <p>
+                                        <%= errors.img.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
                         </div>
 
                         
@@ -61,15 +88,16 @@
                         
                         </div>
                         <div class="form-edit-btn">
-                        <button type="submit" name="enviarformulario" id="enviar1">
+                        <button type="submit" name="enviarformulario" id="enviar5">
                             Actualizar
                         </button>
                     </div>
-
+                    
                     </form>
-                    </div>
-                    </div>
+                    
+                    
 
             </main>
-
+            <!-- <script src="/js/userEdit.js"> </script> -->
     </body>
+</html>

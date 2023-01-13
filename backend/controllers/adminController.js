@@ -14,21 +14,35 @@ const sequelize = db.sequelize;
 const controller = {
 
     deleteUser: (req, res) => {
-            let user = req.params.userId
+        let user = req.params.userId
 
-            db.User.destroy({
-                where: {
-                    id: user,
-                }
-            }).then(() => {
-                return res.redirect('/userList');
-            })
+        db.User.destroy({
+            where: {
+                id: user,
+            }
+        }).then(() => {
+            return res.redirect('/userList');
+        })
 
     },
 
     saveUserEdit: (req, res) => {
-        //creamos nuevamente el objeto para poder modificar el registro del usuario
         let userEdited = req.params.userId
+
+        const resultValidation = validationResult(req);
+        db.User.findOne({
+            where: {
+                id: userEdited,
+            }
+        }).then(user => {
+            if (resultValidation.errors.length > 0) {
+                return res.render('userEdit', {
+                    user,
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    userId: userEdited
+        });
+        }
 
         db.User.update({
             id: userEdited,
@@ -36,17 +50,19 @@ const controller = {
             last_name: req.body.lastName,
             email: req.body.email,
             user: req.body.user,
-            //password: bcrypt.hashSync(req.body.password, 10), //ver como guardar la contra
             user_category_id: req.body.category,
             img: req.file.filename,
             phone_number: req.body.phoneNumber
-        }, {
-            where: { id: userEdited }
-        }).then(res.redirect('/userList'))
+        },
+            {
+                where: { id: userEdited }
+            })
+            .then(res.redirect('/userList'))
             .catch(e => {
                 res.send(e);
             });
-    },
+    })
+},
 
     editUser: (req, res) => {
         let userId = req.params.userId
@@ -54,9 +70,7 @@ const controller = {
         db.User.findByPk(userId)
             .then(user => {
                 res.render('userEdit', { user, userId });
-
             })
-
     },
 
     userList: (req, res) => {
@@ -70,21 +84,21 @@ const controller = {
     saveEdit: (req, res) => {
         let destinyId = req.params.id
 
-       const resultValidation = validationResult(req);
+        const resultValidation = validationResult(req);
         db.Destiny.findOne({
-        where: {
-            id: destinyId,
-        }
-    }).then(product=>{
-        if (resultValidation.errors.length > 0) {
-            return res.render('edit', {
-                product,
-                errors: resultValidation.mapped(),
-                oldData: req.body,
-                idProduct: destinyId
-            });
-        }
-   
+            where: {
+                id: destinyId,
+            }
+        }).then(product => {
+            if (resultValidation.errors.length > 0) {
+                return res.render('edit', {
+                    product,
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    idProduct: destinyId
+                });
+            }
+
             db.Destiny.update({
                 id: parseInt(destinyId),
                 name: req.body.newName,
@@ -98,26 +112,28 @@ const controller = {
                 transport_id: req.body.transport,
                 group_id: req.body.group,
                 meals_id: req.body.meals
-            }, {
-                where: { id: destinyId }
-            }).then(res.redirect('/adminList'))
-                .catch(e => {
+            }, 
+            {
+                where: 
+                { id: destinyId }
+            })
+            .then(res.redirect('/adminList'))
+            .catch(e => {
                     res.send(e);
                 })
-          
-            })
-        
+        })
+    },
 
-},
     adminList: (req, res) => {
-    db.Destiny.findAll()
-    .then(destinos => res.render("adminList", { destinos }));
+        db.Destiny.findAll()
+            .then(destinos => res.render("adminList", { destinos }));
 
-    //res.render("adminList", {products});
-},
-add: (req, res) => {
-    res.render("productAdd");
-},
+    },
+
+    add: (req, res) => {
+        res.render("productAdd");
+    },
+
     create: (req, res) => {
         const resultValidation = validationResult(req);
 
@@ -144,39 +160,39 @@ add: (req, res) => {
         }).catch(e => {
             res.send(e)
         })
+    },
 
+    comments: (req, res) => {
+        res.render("comments");
+    },
+    
+    productEdit: (req, res) => {
+        let idProduct = req.params.id;
+
+        db.Destiny.findOne({
+            where: {
+                id: idProduct,
+            }
+        }).then(product => {
+            res.render("edit", { product, idProduct });
+        }).catch(e => {
+            res.send(e);
+        })
 
     },
-        comments: (req, res) => {
-            res.render("comments");
-        },
-            productEdit: (req, res) => {
-                let idProduct = req.params.id;
 
-                db.Destiny.findOne({
-                    where: {
-                        id: idProduct,
-                    }
-                }).then(product => {
-                    res.render("edit", { product, idProduct });
-                }).catch(e => {
-                    res.send(e);
-                })
+    delete: (req, res) => {
 
-            },
-                delete: (req, res) => {
+        let destiny = req.params.id
 
-                    let destiny = req.params.id
-
-                    db.Destiny.destroy({
-                        where: {
-                            id: destiny,
-                        }
-                    }).then(() => {
-                        return res.redirect('/adminList');
-                    })
-
-                }
+        db.Destiny.destroy({
+            where: {
+                id: destiny,
+            }
+        }).then(() => {
+            return res.redirect('/adminList');
+        })
+    }
 }
 
 

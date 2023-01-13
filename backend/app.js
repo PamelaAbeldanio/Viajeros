@@ -16,7 +16,9 @@ const cors = require('cors');
 const userApiRoutes = require('./routes/api/userRoutes');
 const productsApiRoutes = require('./routes/api/productRoutes')
 
+//configuracion EJS como template engine
 app.set('view engine', 'ejs');
+
 app.set('views', [
     path.join(__dirname, './views'),
     path.join(__dirname, './views/user'),
@@ -35,6 +37,7 @@ app.use(session({
 app.use(userLoggedMiddleware); 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+//acceso a la carpeta de recursos estaticos
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(cors());

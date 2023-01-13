@@ -41,7 +41,6 @@ const validationsProducts = [
     
 ]
 
-/* ---------------------VALIDACION PENDIENTE BACKEND-------------------- */
 const validationsProductsEdit = [
     check('newName')
         .notEmpty().withMessage('Debes ingresar un nombre de destino').bail()
@@ -60,6 +59,20 @@ const validationsProductsEdit = [
     
 ]
 
+const validationsUserEdit = [
+    check('firstName')
+        .notEmpty().withMessage('Debes ingresar un nombre de destino').bail()
+        .isLength({min:5}).withMessage('El nombre de destino debe contener al menos 5 caracteres'),
+    check('img').custom((value, {req}) => {
+        const imgInfo = req.file.filename.split('.')
+        if(imgInfo[1] == 'png' || imgInfo[1] == 'jpg' || imgInfo[1] == 'jpeg' || imgInfo[1] == 'gif') {
+            return imgInfo[1];
+        } else {
+            return false
+        }
+    }).withMessage('La img debe de ser de formato png, jpg, jpeg, gif'),
+]
+
 
 router.get('/adminList', adminController.adminList);
 
@@ -75,7 +88,7 @@ router.delete('/delete/:id', adminController.delete);
 
 router.get('/userList', adminController.userList);
 router.get('/userEdit/:userId', adminController.editUser);
-router.put('/userEdit/:userId/storage', uploadFile.single('img'), adminController.saveUserEdit);
+router.put('/userEdit/:userId/storage', uploadFile.single('img'), validationsUserEdit, adminController.saveUserEdit);
 router.delete('/userDelete/:userId', adminController.deleteUser);
 
 
