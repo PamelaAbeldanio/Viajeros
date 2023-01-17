@@ -7,16 +7,18 @@
     <body>
         <%- include("../partials/header.ejs") %>
 
-            <main>
+            <main class="bodyform-register">
+                <div class="form-body-register">
             
-                <section class="formulario-editar">
+                <section class="main-register-section">
                    
-                    <form id="form-edit" class="form-edit" action="/perfilEdit/<%= userId %>/storage?_method=PUT" method="POST"
+                    <form id="form" class="register-panel" action="/perfilEdit/<%= userId %>/storage?_method=PUT" method="POST"
                         enctype="multipart/form-data">
 
-                        <div class="form-contenedor">
-                            <label for="firstName" class="colocar_nombre">Primer nombre
-                            </label>
+                            <img src="/img/<%=user.img %>" alt="foto" width="40%"><br>
+
+                            <label for="firstName" class="colocar_nombre"></label>
+
                             <input type="text" name="firstName" id="firstName" placeholder=""
                             class="form-control <%= locals.errors && errors.firstName ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.firstName : user.first_name %>">
@@ -27,30 +29,22 @@
                                         </p>
                                     </div>
                                     <% } %>
-                        </div>
-                        <div class="form-contenedor">
-                            <label for="lastName" class="colocar_nombre">Apellido
-                            </label>
+                        
+                        
+                            <label for="lastName" class="colocar_nombre"></label>
                             <input type="text" name="lastName" id="lastName"  required="obligatorio"
                                 value="<%= user.last_name ? user.last_name : '' %>">
-                            </div>
-                        <div class="form-contenedor">
-                            <label for="email" class="colocar_nombre">Email
-                            </label>
+                            
+                            <label for="email" class="colocar_nombre"></label>
                             <input type="email" name="email" id="email"  required="obligatorio"
                                 value="<%= user.email ? user.email : '' %>">
-                            </div>
-                        <div class="form-contenedor">
-                            <label for="user" class="colocar_nombre">Usuario
-                            </label>
+                            
+                            <label for="user" class="colocar_nombre"></label>
                             <input type="text" name="user" id="user"  required="obligatorio"
                                 value="<%= user.user ? user.user : '' %>">
-                            </div>
-                        <div class="form-contenedor">
-                            <label>Imagen actual</label>
-                            <img src="/img/<%=user.img %>" alt="foto" width="40%"><br>
                             
-                            <label for="img">Nueva Imagen de Usuario</label>
+                            
+                            <label for="img"></label>
                             <input type="file" id="img" accept="jpg" name="img" value="/img/<%=user.img %>"
                             class="form-control <%= locals.errors && errors.img ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.img : null %>">
@@ -63,34 +57,26 @@
                                 <% } %>
 
                             
-                        </div>
-                        <div class="form-contenedor">
-                            <label for="birth">Nueva Fecha de Salida</label>
+                        
+                            <label for="birth"></label>
                             <input type="date" id="birth" name="birth" value="<%= user.date ? user.date : ''; %>">
-                        </div>
-                        <div class="form-contenedor">
-                            <label for="category">Es?</label>
-                            <select name="category" id="category">
-                                <option value="user" <%=user.category=="user" ? 'selected' : '' ; %>>Usuario
-                                </option>
-
-                            </select>
-                        </div>
-                        <div class="form-contenedor">
-                            <label for="newPrice">Numero de telefono</label>
+                    
+                        
+                            <label for="newPrice"></label>
                             <input type="number" id="phoneNumber" name="phoneNumber" value="<%= user.phone_number %>">
-                        </div>
-
-                        <div class="form-edit-btn">
-                        <button type="submit" name="enviarformulario" id="enviar1">Subir</button>
-                    </div>
+                        
+                        
+                        
+                        <button id="btnRegister">Editar perfil</button>
+                    
                     <div class="errores">
                         <ul></ul>
                     </div>
+                
                     </form>
-                    </div>
-                    </div>
-
+                </section>
+            </div>  
+                
             </main>
             <%- include("../partials/footer.ejs")%>
 

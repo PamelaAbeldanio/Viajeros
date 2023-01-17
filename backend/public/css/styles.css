@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --violeta: #644076;
@@ -12,14 +12,14 @@
   --negro: #414141;
 
   --verde: #26ac26;
-  --fuente: "Dosis", sans-serif;
+  --fuente: sans-serif;
 }
 
 h1,
 h2,
 p,
 li {
-  font-family: "Dosis", sans-serif;
+  font-family: sans-serif;
 }
 
 * {
@@ -39,7 +39,7 @@ a {
 
 .whatsapp {
   color: var(--blanco);
-  bottom: 2rem;
+  bottom: 3rem;
   position: fixed;
   right: 2rem;
   font-size: 2rem;
@@ -119,8 +119,6 @@ a {
   width: 90%;
   border: 1px solid gray;
   border-radius: 5px;
-  font-family: "Dosis", sans-serif;
-  font-weight: bold;
   outline: none;
 }
 
@@ -148,7 +146,8 @@ a {
   text-align: center;
 }
 .main-home-titulo {
-  border-bottom: 1px solid var(--violeta);
+  border-bottom: 1px solid var(--celeste);
+  color: var(--celeste);
   margin-bottom: 1rem;
   margin-top: 2rem;
   display: inline-block;
@@ -183,19 +182,20 @@ a {
 }
 
 .article-card-top {
-  height: 150px;
+  height: 300px;
 }
 
 .article-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-top-left-radius: 3px 6px;
-  border-top-right-radius: 3px 6px;
+  border-top-left-radius: 3px 4px;
+  border-top-right-radius: 3px 4px;
 }
 
 .article-card-body {
   padding: 1rem;
+  height: 20px;
   /* background-color: #100b18;
   border: 1px solid #100b18 */
 }
@@ -208,11 +208,17 @@ a {
   padding-bottom: 0.5rem;
 }
 
+.article-titulo1 {
+  margin-bottom: 1rem;
+  color: var(--violeta);
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+}
+
 .article-parrafo {
   margin-bottom: 1rem;
   color: var(--negro);
-  font-weight: bold;
-  height: 100px;
+  height: 40px;
 }
 
 .article-precio {
@@ -229,10 +235,9 @@ a {
 .article-btn {
   padding: 0.5rem;
   color: var(--blanco);
-  font-weight: bold;
   border-radius: 5px;
   border: 1px solid var(--violeta);
-  font-family: "Dosis", sans-serif;
+  font-family: sans-serif;
   background-color: var(--violeta);
 }
 
@@ -242,11 +247,12 @@ a {
   display: flex;
   flex-wrap: wrap;
   display: flex;
-    flex-wrap: nowrap;
-    background-image: linear-gradient( rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75) ), url(https://static.vecteezy.com/system/resources/previews/007/383/159/non_2x/colorful-sunset-on-the-tropical-island-beautiful-ocean-beach-with-palms-illustration-cartoon-flat-panoramic-landscape-sunset-with-the-palms-on-colorful-background-free-vector.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+  background: linear-gradient(177deg, #3b2e50 30%, white 80%);
+}
+
+.nosotros-video {
+  display: flex;
+  margin-bottom: 30px;
 }
 
 .nosotros-titulo {
@@ -288,89 +294,19 @@ a {
   font-family: "Dosis", sans-serif;
 }
 
-/* .nosotros-contenedor-img {
-    
-} */
 
 .nosotros-img {
   width: 100%;
   height: 100%;
 }
 
-/* SECTION - MARCAS */
-
-.marcas {
-  padding: 1rem;
-  background-image: linear-gradient( rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75) ), url(https://img.lagaceta.com.ar/fotos/notas/2022/08/24/septima-edicion-travel-sale-se-promueven-pasajes-aereos-descuentos-958168-090533.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-/* .marcas-titulo {
-
-}
-
- */
-
-/* FOOTER */
-
 .footer {
   padding: 2rem 0;
-  background-color: #414141;
+  background-color: var(--celeste);
   text-align: center;
 }
-
-/* FOOTER ACCESOS */
-
-/* .footer-accesos {
-
-}
- */
-.footer-titulo {
-  color: var(--celeste);
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-}
-
-/* .footer-ul {
-  margin-bottom: 2rem;
-} */
-
-/* .footer-li {
-  margin-bottom: 0.5rem;
-} */
-
-/* FOOTER REDES */
-
-/* .footer-redes {
-
-} */
-
-.footer-redes-titulo {
-  margin-bottom: 1rem;
-  color: var(--celeste);
-}
-
-.footer-contenedor-icono {
-  margin-bottom: 2rem;
-}
-
-.footer-icono {
-  font-size: 2rem;
-  padding: 0.5rem;
-  color: var(--lila);
-}
-
-/* FOOTER INFORMACION */
-
 .footer-info {
   text-align: center;
-}
-
-.footer-info-titulo {
-  margin-bottom: 1rem;
-  color: var(--celeste);
 }
 
 .footer-info-parrafo {
@@ -466,11 +402,7 @@ a {
   background-color: #3b2e50;
 }
 
-/* .login-panel button:active {
-  background-color: var(--azul);
-  font-weight: 600;
-  color: var(--blanco);
-} */
+
 .login-btn-contendor button {
   padding: 0.5rem;
   color: var(--blanco);
@@ -545,135 +477,6 @@ a {
   color: #000;
   font-weight: 600;
 }
-
-/*CARRITO.HTML--------------------------------------------------------------*/
-.carrito {
-  padding: 2rem;
-}
-.carrito-contenedor {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-.carrito-titulo {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.carrito-subtitulo {
-  margin-right: 1rem;
-}
-.carrito-icono{
-  font-size: 1.5rem;
-  color: var(--violeta);
-}
-.carrito-section {
-  padding: 1rem;
-  border: 1px solid var(--violeta);
-  border-radius: 10px;
-}
-.carrito-titulo-seleccionados {
-  border-bottom: 1px solid var(--violeta);
-  margin-bottom: 0.5rem;
-}
-
-.carrito-contenedor-seleccionados {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-.carrito-titulo-destino {
-  font-weight: bold;
-}
-
-
-
-.carrito-titulo-extras {
-  border-bottom: 1px solid var(--violeta);
-  margin-bottom: 0.5rem;
-}
-.carrito-contenedor-extras {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-.carrito-subtitulo-extras {
-  font-weight: bold;
-}
-
-.carrito-titulo-total {
-  border-bottom: 1px solid var(--violeta);
-  margin-bottom: 0.5rem;
-}
-
-.carrito-contenedor-total {
-  display: flex;
-  justify-content: space-between;
-}
-.carrito-subtitulo-total {
-  font-weight: bold;
-}
-
-.carrito-contenedor-btn {
-  margin-top: 2rem;
-  text-align: center;
-}
-.carrito-boton-pagar {
-  padding: 0.5rem 2rem;
-  color: var(--blanco);
-  font-weight: bold;
-  border-radius: 5px;
-  border: 1px solid var(--violeta);
-  font-family: "Dosis", sans-serif;
-  background-color: var(--violeta);
-}
-.carrito-boton-pagar:hover{
-  background-color: #3b2e50;
-    color: white;
-    transition: 0.5s;
-    cursor: pointer;
-    border: 1px solid;
-}
-
-.carrito-contenedor-botones {
-  text-align: center;
-  margin-top: 2rem;
-}
-.carrito-boton-seguir-comprando{
-  padding: 0.5rem;
-  color: var(--blanco);
-  font-weight: bold;
-  border-radius: 5px;
-  border: 1px solid var(--violeta);
-  font-family: "Dosis", sans-serif;
-  background-color: var(--violeta);
-}
-.carrito-boton-seguir-comprando:hover{
-  background-color: #3b2e50;
-    color: white;
-    transition: 0.5s;
-    cursor: pointer;
-    border: 1px solid;
-}
-
-.carrito-boton-cancelar {
-  padding: 0.5rem;
-  color: var(--blanco);
-  font-weight: bold;
-  border-radius: 5px;
-  border: 1px solid var(--violeta);
-  font-family: "Dosis", sans-serif;
-  background-color: var(--violeta);
-}
-.carrito-boton-cancelar:hover{
-  background-color: #3b2e50;
-    color: white;
-    transition: 0.5s;
-    cursor: pointer;
-    border: 1px solid;
-}
-
-
 
 /*product*/
 .imgpbanner {
@@ -815,38 +618,21 @@ p.producto-descrip {
   padding: 1rem;
 }
 
-.main-register-contenedor {
-  box-shadow: -6px 8px 10px 0 #7c7b7b;
-}
-
 .main-register-section {
   text-align: center;
 }
 
 .main-register-title {
   text-align: center;
-  padding: 15px;
-  background-color: var(--violeta);
-  font-weight: 800;
   color: var(--blanco);
 }
 
 .register-panel {
-  padding: 10px;
   text-align: center;
-  background-color: var(--gris-claro);
-  /* width: 70%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /*  width: 360px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 10px;
-    text-align: center;
-    margin: auto; */
+  margin-bottom: 40px;
 }
 
 .main-register-section {
@@ -861,10 +647,8 @@ p.producto-descrip {
   text-align: left;
   display: block;
   color: var(--negro);
-  padding: 10px;
   padding-left: 5%;
   position: relative;
-  font-family: "Dosis";
   font-weight: bold;
 }
 
@@ -893,13 +677,11 @@ p.producto-descrip {
 
 .register-panel button {
   padding: 10px;
-  margin: 20px auto;
+  margin: 5px auto;
   display: block;
   box-sizing: border-box;
   height: max-content;
   width: 20%;
-  max-width: 120px;
-  width: max-content;
   border-radius: 5px;
   border: 1px solid var(--violeta);
   background-color: var(--violeta);
@@ -970,77 +752,6 @@ p.producto-descrip {
   width: 15px;
 }
 
-/*contacto -------------------------------------------------------------------------------------------------------*/
-
-.maincontact {
-  padding: 2rem;
-  background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, -0.25)),
-    url(https://q-xx.bstatic.com/psb/capla/static/media/long_stays_banner_wide.a1b12d47.png);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-input {
-  background-color: var(--blanco);
-  width: 90%;
-  height: 40px;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: var(--violeta);
-  margin: 10px;
-  padding-left: 10px;
-}
-
-textarea {
-  background-color: var(--blanco);
-  width: 100%;
-  height: 150px;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: var(--violeta);
-  margin: 10px auto 20px;
-  /* margin-top: 10px; */
-  padding-left: 10px;
-  /* margin-bottom: 20px; */
-  padding-top: 15px;
-}
-
-.maincontact-contenedor label {
-  display: block;
-  padding: 10px;
-  color: var(--gris-claro);
-  padding: 0;
-}
-
-.maincontact-textarea label {
-  color: var(--gris-claro);
-}
-
-.maincontact-contenedor-btn {
-  text-align: center;
-}
-
-.maincontact button {
-  margin-top: 1rem;
-  padding: 0.5rem 3rem;
-  background-color: var(--violeta);
-  color: var(--blanco);
-  border: 1px solid;
-  border-radius: 5px;
-}
-
-span {
-  color: var(--blanco);
-}
-
-.aviso {
-  font-size: 13px;
-  color: var(--blanco);
-}
 
 .formulario {
   text-align: letf;
@@ -1532,15 +1243,6 @@ ul {
   background-color: rgba(122, 122, 122, 0.477);
 }
 
-/*administrador login-------------------------------------------*/
-/*  .contenedor-loginadmi {
-  background: var(--gris-claro);
-  padding: 40px;
-  width: 450px;
-  margin: 40px auto;
-  border-radius:10px;
-  box-shadow: 0 4px 10px 4px rgba(#000);
-} */
 .button-block {
   max-width: 200px;
   border: 0;
@@ -1573,15 +1275,6 @@ ul {
   color: var(--negro);
 }
 
-/*products--------------------------------------------------------------------------------*/
-/* productEdit */
-/* article.destiny {
-  background-color: var(--gris-claro);
-  margin: 5%;
-  padding: 2%;
-  border-radius: 10px;
-}
- */
  .datos-usuario {
   flex-wrap: wrap
 }
@@ -1596,6 +1289,7 @@ ul {
     display: flex;
     justify-content: space-between;
     flex-flow: wrap;
+    margin-bottom: 30px;
   }
 
   .article {
@@ -1612,19 +1306,18 @@ ul {
   .header ul {
     width: 100%;
     text-align: center;
-    margin-bottom: 2rem;
-    margin-left: 30px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
   }
-
+  
   .header-navbar-imguser{
     display: flex;
     align-items: center;
   }
   .header li {
     list-style: none;
-    padding: 1rem;
+    padding: 0 1rem 0 1rem ;
     transition: 0.5s;
   }
 
@@ -1635,7 +1328,6 @@ ul {
 
   .header li a {
     color: #8fc2d7;
-    font-weight: bold;
     font-size: 1.2rem;
     transition: 0.5s;
   }
@@ -1647,18 +1339,21 @@ ul {
 
   .header {
     display: flex;
-    padding: 2rem;
+    padding: 1rem 1rem 0 1rem;
     background-color: #3b2e50;
+    
   }
 
   .header-logo {
     margin-bottom: 0;
-    width: 100px;
+    width: 40px;
   }
 
   /* .header-rigth {} */
 
   .header-nav {
+    padding: 1rem 1rem 0 1rem;
+    background-color: #3b2e50;
     display: flex;
   }
 
@@ -1668,6 +1363,7 @@ ul {
 
   .buscador {
     background-color: #3b2e50;
+    padding-top: 2rem;
   }
 
   /* MAIN */
@@ -1676,18 +1372,21 @@ ul {
     padding:  0;
   }
 
-  .main-home-section {
+  .main-home-destinos {
+    background: linear-gradient(180deg, #3b2e50 3%, white 98%);
+  }
+
+  .main-home-section-index {
     padding: 2rem;
     display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 0 auto;
+    justify-content: space-evenly;
+    background: linear-gradient(180deg, #3b2e50 5%, white 90%);
   }
 
   .article {
     display: inline-block;
     padding: 0;
-    width: 200px;
+    width: 300px;
     transition: 0.5s;
     background-color: white;
     margin: 1rem;
@@ -1706,8 +1405,7 @@ ul {
   
 
   .article-btn {
-    text-transform: uppercase;
-    font-weight: bold;
+    text-transform: uppercase; 
     transition: 0.5s;
   }
 
@@ -1724,23 +1422,8 @@ ul {
   .nosotros {
     display: flex;
     flex-wrap: nowrap;
-    background-image: linear-gradient(
-        rgba(5, 7, 12, 0.75),
-        rgba(5, 7, 12, 0.75)
-      ),
-      url(https://static.vecteezy.com/system/resources/previews/007/383/159/non_2x/colorful-sunset-on-the-tropical-island-beautiful-ocean-beach-with-palms-illustration-cartoon-flat-panoramic-landscape-sunset-with-the-palms-on-colorful-background-free-vector.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
   }
 
-  /*   .nosotros-parrafo {
-    padding: 0 4rem;
-  } */
-
-  /* .nosotros-contenedor-btn {
-
-    } */
   .nosotros-btn {
     border: 1px solid #414141;
     text-transform: uppercase;
@@ -1756,46 +1439,15 @@ ul {
   }
 
   /* FOOTER */
-
   .footer {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .footer-accesos {
-    width: 30%;
-    color: #ffffff;
-    transition: 0.5s;
-  }
-
-  .footer-contenedor-li {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .footer-li a {
-    transition: 0.5s;
-  }
-
-  .footer-li a:hover {
-    color: #8fc2d7;
-    transition: 0.5s;
-  }
-
-  .footer-redes {
-    width: 33%;
-    color: #ffffff;
-  }
-
-  .footer-icono {
-    color: #ffffff;
-    transition: 0.5s;
-  }
-
-  .footer-icono:hover {
-    color: #8fc2d7;
-    transition: 0.5s;
-    cursor: pointer;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--gris);
+    color: white;
+    text-align: center;
   }
 
   .footer-info {
@@ -1901,7 +1553,6 @@ ul {
   .register-panel button {
     font-size: 18px;
     align-self: flex-end;
-    margin-top: 50px;
     padding: 10px;
   }
 
@@ -2348,6 +1999,8 @@ ul {
   color: rgb(202, 37, 37);
   font-family: var(--fuente);
   font-weight: bold;
+  margin-left: 100px;
+  padding-bottom: 1rem;
 }
 .text-danger1 {
   color: rgb(202, 37, 37);
@@ -2845,24 +2498,24 @@ ul {
 
 
 /* ----------- PERFIL EDIT --------------------*/
-.main-perfil {
+/* .main-perfil {
   display: flex;
-  align-items: center;
-}
+  align-items: center; */
+
 .main-perfil-contenedor {
-margin: 2rem 2rem 0 2rem;
-padding: 2rem 2rem 0 2rem;
-text-align: center;
-width: 95%;
-height: 250px;
-background: linear-gradient(177deg, #644076 20%, white 70%);
-position: relative;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  padding-top: 3rem;
+  background: linear-gradient(177deg, #3b2e50 20%, white 70%);
 }
 
 .main-perfil-img{
   width: 180px;
   border-radius: 50%;
-  height: 180px;
+  
 }
 
 .datos-usuario{
@@ -2889,4 +2542,150 @@ div.datos-usuario .fa-at, .fa-facebook-messenger, .fa-twitter {
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 10px;
+}
+
+
+
+
+/* formulario nuevo */
+.bodyform {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background: linear-gradient(177deg, #3b2e50 20%, white 70%);
+}
+
+.bodyform-register {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(177deg, #3b2e50 30%, white 80%);
+}
+
+.form-body {
+  width: 400px;
+  min-width: 300px;
+  border-radius: 10px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border: solid 1px #2980b9;
+  margin: 10px;
+}
+
+.form-body-register {
+  width: 800px;
+  margin: 2rem;
+}
+
+.form-body img{
+  width: 150px;
+  display: block;
+  margin: 20px auto;
+}
+
+.form-body-register img {
+  width: 150px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 50%;
+}
+
+.text{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--celeste);
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.form-body input {
+  display: block;
+  margin: auto;
+  height: 40px;
+  width: 75%;
+  padding-left: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  background-color: transparent;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 1rem;
+  outline: none
+}
+
+.form-body-register input {
+  display: block;
+  margin-bottom: 5px;
+  height: 40px;
+  width: 75%;
+  padding-left: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  background-color: transparent;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 1rem;
+  outline: none
+}
+
+.form-body input[type='password'] {
+  margin-top: 20px;
+}
+
+::placeholder {
+  font-size: 1rem;
+  color: rgba(255,255,255, .596);
+}
+
+.form-body input:hover {
+  transition: .5s;
+  border: 1px solid #2980b9;
+  color: #2498db;
+}
+
+.form-body button{
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  height: 40px;
+  width: 78%;
+  background: transparent;
+  color: #b9c4c6;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #472857;
+  transition: all .5s ease;
+}
+
+.form-body button:hover {
+  color: #d5dbdd;
+  border: 2px solid #472857;
+  background: #472857;
+}
+
+#btnRegister {
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  height: 40px;
+  width: 70%;
+  background: transparent;
+  color: #b9c4c6;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #472857;
+  transition: all .5s ease;
+}
+#btnRegister:hover {
+  color: #d5dbdd;
+  border: 2px solid #472857;
+  background: #472857;
 }

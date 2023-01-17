@@ -4,8 +4,6 @@ const sequelize = db.sequelize;
 
 function userLoggedMiddleware (req, res, next) {
 
-    
-    
     let userInCookie = req.cookies.user;
     
     db.User.findAll({

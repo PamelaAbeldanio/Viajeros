@@ -5,18 +5,48 @@
 
     <body>
         <%- include("../partials/header.ejs") %>
+        <div class="bodyform">
+            <div class="form-body">
+                <div class="errores">
+                    <ul></ul>
+                </div>
+                <img src="img/login.png" alt="user-login">
+                <p class="text">Ingrese su usuario</p>
+                <form id="form" class="login-form" action="/login" method="post">
+                    <input id="user" type="text" name="user" placeholder="Email o usuario"
+                        class="form-control <%= locals.errors && errors.user ? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.user : null %>">
+                    <% if (locals.errors && errors.user) { %>
+                        <div class="text-danger">
+                            <p>
+                                <%= errors.user.msg %>
+                            </p>
+                        </div>
+                        <% } %>
+                            <input id="password" type="password" name="password" placeholder="Contraseña"
+                                class="form-control <%= locals.errors && errors.user ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.password : null %>">
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="text-danger">
+                                    <p>
+                                        <%= errors.password.msg %>
+                                    </p>
+                                </div>
+                                <% } %>
+                                    <div class="remember-div">
+                                        <label class="remember-label" for="remember">
+                                            <input class="check-remember" type="checkbox" name="remember" id="remember">
+                                            Recordarme
+                                        </label></div>
+                                        <button>Iniciar sesion</button>
+                </form>
 
-            <main class="main-login">
-                <div class="main-login-contenedor">
-                    <h1 class="main-login-title">Ingrese a su cuenta</h1>
-                    
-                    <div class="errores">
-                        <ul>
-                            
-                        </ul>
-                    </div>
 
-                    <section class="main-login-section">
+
+            </div>
+        </div>
+
+            <!-- <section class="main-login-section">
                         <form id="form" class="login-panel" action="/login" method="post">
                             <label class="login-label" for="user">Usuario</label>
                             <input id="user" type="text" name="user" placeholder="Email o usuario"
@@ -39,31 +69,32 @@
                                                 <%= errors.password.msg %>
                                             </p>
                                         </div>
-                                        <% } %>                                  
+                                        <% } %>
                                             <div class="remember-div">
                                                 <label class="remember-label" for="remember">
-                                                    <input class="check-remember" type="checkbox" name="remember" id="remember"> Recordarme
+                                                    <input class="check-remember" type="checkbox" name="remember"
+                                                        id="remember"> Recordarme
                                                 </label>
                                             </div>
                                             <div class="login-btn-contenedor">
                                                 <button id="btn">Ingresar</button>
-                                                <button> 
+                                                <button>
                                                     <a href="/register/">Crear nueva cuenta</a>
                                                 </button>
-                                                
+
                                             </div>
-                                        </div>
-                        </form>
-                    </section>
                 </div>
+                </form>
+                </section> -->
+            <!-- </div>
 
 
-            </main>
+            </main> -->
 
 
             <%- include("../partials/footer.ejs")%>
-            <script src="/js/login.js"></script>
-            <script src="/js/hamburguesa.js"></script>
+                <script src="/js/login.js"></script>
+                <script src="/js/hamburguesa.js"></script>
     </body>
 
 </html>

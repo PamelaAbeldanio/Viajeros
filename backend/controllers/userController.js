@@ -100,8 +100,8 @@ const userController = {
                 if (bcrypt.compareSync(req.body.password, check.password)) {
                     req.session.usuariologueado = check;
 
-                    if (req.body.remember) {
-                        res.cookie('user', req.body.user, { max: (1000 * 60) * 2 })
+                    if (req.body.remember != undefined) {
+                        res.cookie('user', req.body.user,  { maxAge: 60000 }/* { max: (1000 * 60) * 2 } */)
                     }
 
                     return res.redirect('/perfil');

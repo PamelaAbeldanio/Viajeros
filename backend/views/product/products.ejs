@@ -8,7 +8,7 @@
         <section class="buscador">
             <%- include('../partials/search.ejs') %>
         </section>
-            <main class="main-home">
+            <main class="main-home-destinos">
                 <div class="main-home-contenedor-titulo">
                     <h2 class="Category main-home-titulo">NACIONALES</h2>
                 </div>
@@ -18,24 +18,16 @@
                     <% let nacional = destinos.filter(product => product.destiny_category_id == 1) %>
                         <% nacional.forEach( product => { %>
                             <article class="article">
+                                <a href="/product/detalle/<%=product.id %> ">
                                 <div class="article-card-top">
                                     <img class="article-img" src="/img/<%= product.img %>" alt="">
                                 </div>
                                 <div class="article-card-body">
-                                    <h1 class="article-titulo">
+                                    <h1 class="article-titulo1">
                                         <%= product.name %>
                                     </h1>
-                                    <p class="article-parrafo cut-text">
-                                        <%= product.detail %>
-                                    </p>
-                                    <p class="article-precio">
-                                        $<%=product.price %>
-                                    </p>
-                                    <div class="contenedor-btn">
-                                        <a href="/product/detalle/<%=product.id %> "> <button
-                                            class="article-btn">Saber más</button> </a>
                                     </div>
-                                </div>
+                                </a>
                             </article>
                             <% }) %>
                 </section>
@@ -49,23 +41,16 @@
                         <% internacional.forEach(product=> { %>
 
                             <article class="article">
+                                <a href="/product/detalle/<%=product.id %>">
                                 <div class="article-card-top">
                                     <img class="article-img" src="/img/<%= product.img %>" alt="">
                                 </div>
                                 <div class="article-card-body">
-                                    <h1 class="article-titulo">
+                                    <h1 class="article-titulo1">
                                         <%= product.name %>
                                     </h1>
-                                    <p class="article-parrafo cut-text">
-                                        <%= product.detail %>
-                                    </p>
-                                    <p class="article-precio">
-                                        $<%=product.price %>
-                                    </p>
-                                    <div class="contenedor-btn">
-                                        <a href="/product/detalle/<%=product.id %>"> <button
-                                            class="article-btn">Saber más</button> </a>
                                 </div>
+                            </a>
                             </article>
                             <% }) %>
 
